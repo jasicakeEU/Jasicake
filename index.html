@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JasiCake | Pedidos</title>
+<meta name="description" content="JasiCake — postres y detalles personalizados.">
+<style>
+:root{--bg:#fff9f7;--ink:#3f3540;--pink:#e8b8c5;--pink2:#f7e5e9;--muted:#756c73;--line:#eadde0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,sans-serif}
+header{position:sticky;top:0;background:#fff9f7ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:5}
+.nav{max-width:1100px;margin:auto;padding:17px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font:700 30px Georgia,serif}.logo span{color:#d895a8}
+button{font:inherit}.cartBtn,.buy{border:0;border-radius:999px;padding:12px 17px;font-weight:700;cursor:pointer}
+.cartBtn{background:var(--ink);color:#fff}.hero{max-width:1100px;margin:auto;padding:60px 20px 35px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.kicker{color:#d18da0;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}
+h1,h2{font-family:Georgia,serif}h1{font-size:clamp(45px,7vw,76px);line-height:1;margin:12px 0}h2{font-size:38px}
+.hero p{color:var(--muted);font-size:18px;line-height:1.6}.heroArt{min-height:320px;border-radius:35px;background:linear-gradient(145deg,#f6dbe2,#f2cfba);display:grid;place-items:center;font-size:90px}
+.wrap{max-width:1100px;margin:auto;padding:30px 20px 70px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:25px;overflow:hidden}.photo{height:185px;background:linear-gradient(135deg,#f9e9ed,#f3ddc9);display:grid;place-items:center;font-size:70px}
+.info{padding:20px}.info h3{margin:0 0 8px;font-size:20px}.info p{margin:0 0 16px;color:var(--muted);line-height:1.5}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.price{font-weight:800;font-size:19px}.buy{background:var(--pink)}
+.cart{position:fixed;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;z-index:10;box-shadow:-20px 0 60px #0002;transform:translateX(105%);transition:.25s;padding:25px;overflow:auto}
+.cart.open{transform:none}.cartHead{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#f3ecee;border-radius:50%;width:38px;height:38px;cursor:pointer}
+.cartItem{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:15px}.qty{display:flex;gap:8px;align-items:center}.qty button{border:1px solid #ddd;background:#fff;border-radius:8px;padding:3px 9px;cursor:pointer}
+.total{font-size:22px;font-weight:800;display:flex;justify-content:space-between;margin:25px 0}
+.form{margin:18px 0;padding:18px;background:var(--bg);border:1px solid var(--line);border-radius:16px}.form label{display:block;font-size:13px;font-weight:700;margin:10px 0 5px}
+.form input,.form textarea{width:100%;padding:11px;border:1px solid #ddd;border-radius:10px;font:inherit}.form textarea{min-height:70px;resize:vertical}
+.confirm{width:100%;padding:15px;border:0;border-radius:14px;background:#25d366;color:#fff;font-weight:800;font-size:16px;cursor:pointer}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.products{grid-template-columns:1fr}.heroArt{min-height:220px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">Jasi<span>Cake</span></div><button class="cartBtn" onclick="openCart()">🛒 Carrito <span id="count">0</span></button></div></header>
+
+<section class="hero">
+<div><div class="kicker">Demo · pedidos por WhatsApp</div><h1>Dulces para momentos especiales.</h1>
+<p>Elige tus productos, revisa tu carrito y envía el pedido directamente a JasiCake por WhatsApp.</p></div>
+<div class="heroArt">🎂🍓🧁</div>
+</section>
+
+<main class="wrap"><h2>Nuestros postres</h2><div class="products" id="products"></div></main>
+
+<aside class="cart" id="cart">
+<div class="cartHead"><h2>Tu pedido</h2><button class="close" onclick="closeCart()">✕</button></div>
+<div id="cartItems"></div>
+<div class="total"><span>Total</span><span id="total">0,00 €</span></div>
+
+<div class="form">
+<b>Datos para el pedido</b>
+<label for="name">Nombre *</label><input id="name" placeholder="Tu nombre" autocomplete="name">
+<label for="date">Fecha *</label><input id="date" type="date">
+<label for="time">Hora aproximada</label><input id="time" type="time">
+<label for="notes">Observaciones</label><textarea id="notes" placeholder="Sabor, decoración u otro detalle..."></textarea>
+</div>
+
+<button class="confirm" onclick="confirmOrder()">📲 Confirmar pedido por WhatsApp</button>
+<div class="note">Al confirmar se abrirá WhatsApp con el pedido completo. No se realiza ningún pago online en esta demo.</div>
+</aside>
+
+<script>
+const PHONE="34641408002";
+const products=[
+{id:1,name:"Tarta de chocolate",price:30,emoji:"🍫🎂",desc:"Bizcocho de chocolate, jugoso y decorado."},
+{id:2,name:"Tres leches",price:25,emoji:"🥛🎂",desc:"Tarta húmeda y cremosa, estilo tres leches."},
+{id:3,name:"Red Velvet",price:35,emoji:"❤️🍰",desc:"Clásica red velvet con cobertura cremosa."},
+{id:4,name:"Cupcakes personalizados",price:20,emoji:"🧁",desc:"Pack de cupcakes decorados para tu celebración."},
+{id:5,name:"Piñata personalizada",price:35,emoji:"🎉",desc:"Diseño personalizado y opción con cintas para tirar."},
+{id:6,name:"Toppers personalizados",price:8,emoji:"✨🎂",desc:"Toppers para completar tu tarta o mesa dulce."}
+];
+
+let cart=[];
+const euro=n=>n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
+
+function renderProducts(){
+document.getElementById("products").innerHTML=products.map(p=>`
+<article class="card">
+<div class="photo">${p.emoji}</div>
+<div class="info"><h3>${p.name}</h3><p>${p.desc}</p>
+<div class="row"><span class="price">${euro(p.price)}</span><button class="buy" onclick="add(${p.id})">Añadir</button></div>
+</div></article>`).join("");
+}
+
+function add(id){
+const x=cart.find(i=>i.id===id);
+x?x.qty++:cart.push({id,qty:1});
+renderCart();openCart();
+}
+
+function change(id,d){
+const x=cart.find(i=>i.id===id);
+if(!x)return;
+x.qty+=d;
+if(x.qty<=0)cart=cart.filter(i=>i.id!==id);
+renderCart();
+}
+
+function renderCart(){
+let count=cart.reduce((s,i)=>s+i.qty,0),total=0;
+document.getElementById("count").textContent=count;
+document.getElementById("cartItems").innerHTML=cart.length?cart.map(i=>{
+const p=products.find(x=>x.id===i.id),sub=p.price*i.qty;total+=sub;
+return `<div class="cartItem"><div><b>${p.name}</b><div>${euro(p.price)} c/u</div></div>
+<div class="qty"><button onclick="change(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="change(${p.id},1)">+</button></div></div>`;
+}).join(""):"<p>Tu carrito está vacío.</p>";
+document.getElementById("total").textContent=euro(total);
+}
+
+function openCart(){document.getElementById("cart").classList.add("open")}
+function closeCart(){document.getElementById("cart").classList.remove("open")}
+
+function confirmOrder(){
+if(!cart.length){alert("Añade al menos un producto al carrito.");return}
+
+const name=document.getElementById("name").value.trim();
+const date=document.getElementById("date").value;
+const time=document.getElementById("time").value;
+const notes=document.getElementById("notes").value.trim();
+
+if(!name||!date){alert("Indica tu nombre y la fecha del pedido.");return}
+
+let total=0;
+const lines=cart.map(i=>{
+const p=products.find(x=>x.id===i.id),sub=p.price*i.qty;
+total+=sub;
+return `• ${i.qty} x ${p.name} — ${euro(sub)}`;
+});
+
+const d=new Date(date+"T12:00:00").toLocaleDateString("es-ES");
+const text=`Hola JasiCake 👋
+
+Quiero hacer un pedido:
+
+${lines.join("\n")}
+
+Total estimado: ${euro(total)}
+
+👤 Nombre: ${name}
+📅 Fecha: ${d}
+⏰ Hora aproximada: ${time||"Por confirmar"}
+📝 Observaciones: ${notes||"Ninguna"}
+
+¿Podéis confirmar disponibilidad y los detalles del pedido?`;
+
+const url="https://api.whatsapp.com/send?phone="+PHONE+"&text="+encodeURIComponent(text);
+
+// Enlace web oficial de WhatsApp; evita el esquema whatsapp:// que provoca
+// el error "no disponible" en algunos navegadores Android.
+window.location.assign(url);
+}
+
+renderProducts();
+renderCart();
+</script>
+</body>
+</html>
