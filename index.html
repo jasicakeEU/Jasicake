@@ -3,1518 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Jasi's Sublimación y Papelería</title>
-
-<meta name="description" content="Jasi's Sublimación y Papelería. Piñatas, tartas, tazas sublimadas y papelería personalizada.">
+<title>Jasi's | Sublimación y Papelería</title>
 
 <style>
-:root{
-  --rosa:#d96b86;
-  --rosa-claro:#f8e3e9;
-  --rosa-suave:#fff7f9;
-  --crema:#fffaf7;
-  --texto:#493b40;
-  --gris:#75686d;
-  --blanco:#fff;
-  --borde:#ecdde2;
-  --verde:#25D366;
+* {
+    box-sizing: border-box;
 }
 
-*{
-  box-sizing:border-box;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8fa;
+    color: #4a3038;
 }
 
-html{
-  scroll-behavior:smooth;
+header {
+    background: linear-gradient(135deg, #fff0f4, #ffe0e9);
+    text-align: center;
+    padding: 35px 20px 30px;
+    border-bottom: 3px solid #f4b5c5;
 }
 
-body{
-  margin:0;
-  background:var(--crema);
-  color:var(--texto);
-  font-family:Arial,Helvetica,sans-serif;
+.logo {
+    font-family: cursive;
+    font-size: 48px;
+    color: #d95b7a;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-button,
-input,
-textarea{
-  font-family:inherit;
+.sublogo {
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #80505e;
 }
 
-/* =========================
-   CABECERA
-========================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,250,247,.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--borde);
-}
-
-.header-inner{
-  max-width:1150px;
-  margin:auto;
-  padding:12px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.header-logo{
-  height:58px;
-  width:auto;
-  max-width:190px;
-  object-fit:contain;
-}
-
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.header-actions a{
-  text-decoration:none;
-  font-weight:bold;
-  font-size:14px;
-}
-
-.cart-button{
-  border:0;
-  background:var(--texto);
-  color:#fff;
-  border-radius:25px;
-  padding:10px 15px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* =========================
-   PORTADA
-========================= */
-
-.hero{
-  min-height:650px;
-  max-width:1150px;
-  margin:auto;
-  padding:55px 20px 70px;
-  text-align:center;
-}
-
-.hero-logo{
-  width:min(330px,75vw);
-  max-height:220px;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 20px;
-}
-
-.hero h1{
-  font-family:Georgia,serif;
-  color:var(--rosa);
-  font-size:clamp(38px,7vw,62px);
-  margin:10px 0 5px;
-}
-
-.hero h2{
-  font-family:Georgia,serif;
-  font-size:clamp(19px,4vw,28px);
-  margin:0 0 18px;
-}
-
-.hero-description{
-  max-width:650px;
-  margin:0 auto 20px;
-  color:var(--gris);
-  line-height:1.7;
-  font-size:17px;
-}
-
-.contact-main{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:22px 0 38px;
-}
-
-.contact-main a{
-  background:#fff;
-  border:1px solid var(--borde);
-  border-radius:30px;
-  padding:11px 17px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 18px rgba(0,0,0,.05);
-}
-
-.catalog-title{
-  font-family:Georgia,serif;
-  font-size:30px;
-  margin:15px 0 20px;
-  color:var(--texto);
-}
-
-/* =========================
-   BOTONES DE CATEGORÍA
-========================= */
-
-.category-menu{
-  max-width:950px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.category-button{
-  border:1px solid var(--borde);
-  background:#fff;
-  border-radius:25px;
-  padding:25px 15px;
-  min-height:175px;
-  cursor:pointer;
-  transition:.2s;
-  color:var(--texto);
-}
-
-.category-button:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px rgba(80,40,55,.12);
-}
-
-.category-icon{
-  font-size:48px;
-  display:block;
-  margin-bottom:10px;
-}
-
-.category-button h3{
-  font-family:Georgia,serif;
-  font-size:21px;
-  margin:0 0 8px;
-}
-
-.category-button span{
-  color:var(--rosa);
-  font-weight:bold;
-  font-size:13px;
-}
-
-/* =========================
-   CATÁLOGOS
-========================= */
-
-.catalog-page{
-  display:none;
-  padding:55px 20px 80px;
-  min-height:70vh;
-}
-
-.catalog-page.active{
-  display:block;
-}
-
-.catalog-inner{
-  max-width:1150px;
-  margin:auto;
-}
-
-.back-button{
-  border:0;
-  background:var(--rosa-claro);
-  color:#954e64;
-  padding:11px 18px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-bottom:28px;
-}
-
-.catalog-heading{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.catalog-heading h2{
-  font-family:Georgia,serif;
-  color:var(--rosa);
-  font-size:42px;
-  margin:0 0 10px;
-}
-
-.catalog-heading p{
-  color:var(--gris);
-  max-width:650px;
-  margin:auto;
-  line-height:1.6;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.card{
-  background:#fff;
-  border:1px solid var(--borde);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 8px 25px rgba(60,35,45,.07);
-}
-
-.card-photo{
-  width:100%;
-  height:300px;
-  background:#f8e9ed;
-  overflow:hidden;
-}
-
-.card-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.card-content{
-  padding:20px;
-}
-
-.card-content h3{
-  font-family:Georgia,serif;
-  color:var(--rosa);
-  font-size:23px;
-  margin:0 0 9px;
-}
-
-.card-content p{
-  color:var(--gris);
-  line-height:1.5;
-  margin:0 0 12px;
-}
-
-.price{
-  font-weight:bold;
-  font-size:18px;
-}
-
-.price-note{
-  display:block;
-  color:var(--gris);
-  font-size:12px;
-  line-height:1.4;
-  margin-top:5px;
-}
-
-.add-button{
-  margin-top:15px;
-  border:0;
-  background:var(--rosa-claro);
-  color:#954e64;
-  border-radius:25px;
-  padding:11px 16px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.add-button:hover{
-  background:var(--rosa);
-  color:#fff;
-}
-
-/* =========================
-   CONTACTO
-========================= */
-
-.contact-section{
-  background:linear-gradient(135deg,#d96b86,#c95773);
-  color:#fff;
-  text-align:center;
-  padding:65px 20px;
-}
-
-.contact-section h2{
-  font-family:Georgia,serif;
-  font-size:40px;
-  margin:0 0 10px;
-}
-
-.contact-section p{
-  margin-bottom:25px;
-}
-
-.contact-links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.contact-links a{
-  background:#fff;
-  color:var(--texto);
-  text-decoration:none;
-  padding:13px 19px;
-  border-radius:30px;
-  font-weight:bold;
-}
-
-/* =========================
-   CARRITO
-========================= */
-
-.cart{
-  position:fixed;
-  top:0;
-  right:0;
-  width:min(440px,100%);
-  height:100vh;
-  background:#fff;
-  z-index:3000;
-  padding:25px;
-  overflow-y:auto;
-  box-shadow:-15px 0 45px rgba(0,0,0,.18);
-  transform:translateX(105%);
-  transition:.3s;
+.contacto {
+    margin-top: 18px;
+    font-size: 15px;
 }
 
-.cart.open{
-  transform:translateX(0);
+.contacto a {
+    color: #c94f70;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.cart-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
-.cart-header h2{
-  font-family:Georgia,serif;
-  margin:0;
+nav button {
+    border: none;
+    background: #f5b4c5;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.close-button{
-  border:0;
-  background:#f3ecef;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:18px;
+nav button:hover {
+    background: #d95b7a;
 }
 
-.cart-item{
-  padding:15px 0;
-  border-bottom:1px solid #eee;
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 18px;
 }
 
-.cart-item-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
+.catalogo {
+    display: none;
 }
 
-.remove{
-  border:0;
-  background:#f3ecef;
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  cursor:pointer;
+.catalogo.activo {
+    display: block;
 }
 
-.total{
-  display:flex;
-  justify-content:space-between;
-  font-size:21px;
-  font-weight:bold;
-  margin:25px 0;
+.titulo {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.form{
-  background:var(--rosa-suave);
-  border:1px solid var(--borde);
-  padding:18px;
-  border-radius:18px;
-  margin-bottom:18px;
+.titulo h1 {
+    color: #d95b7a;
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
-.form h3{
-  margin-top:0;
-  font-family:Georgia,serif;
+.titulo p {
+    color: #76515c;
 }
-
-.form label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin:12px 0 5px;
-}
-
-.form input,
-.form textarea{
-  width:100%;
-  padding:11px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  background:#fff;
-}
-
-.form textarea{
-  min-height:85px;
-  resize:vertical;
-}
-
-.whatsapp-order{
-  width:100%;
-  border:0;
-  background:var(--verde);
-  color:#fff;
-  padding:15px;
-  border-radius:30px;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* =========================
-   WHATSAPP FLOTANTE
-========================= */
-
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:var(--verde);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:28px;
-  z-index:2000;
-  box-shadow:0 6px 20px rgba(0,0,0,.22);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  background:#403236;
-  color:#f9ecef;
-  text-align:center;
-  padding:30px 20px;
-  font-size:14px;
-}
-
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width:900px){
-
-  .category-menu{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:600px){
-
-  .header-actions a{
-    display:none;
-  }
-
-  .header-logo{
-    height:48px;
-  }
-
-  .hero{
-    padding-top:35px;
-  }
-
-  .hero-logo{
-    width:min(280px,80vw);
-  }
-
-  .category-menu{
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-  }
-
-  .category-button{
-    min-height:150px;
-    padding:18px 8px;
-  }
-
-  .category-icon{
-    font-size:40px;
-  }
-
-  .category-button h3{
-    font-size:17px;
-  }
-
-  .products{
-    grid-template-columns:1fr;
-  }
-
-  .card-photo{
-    height:330px;
-  }
 
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.producto h3 {
+    margin: 15px 0 10px;
+    color: #633e49;
+}
+
+.producto button {
+    background: #d95b7a;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.producto button:hover {
+    background: #b94362;
+}
+
+footer {
+    margin-top: 50px;
+    background: #633e49;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer a {
+    color: #ffd4df;
+    text-decoration: none;
+}
+
+.whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    background: #25D366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    z-index: 20;
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     CABECERA
-========================= -->
-
 <header>
+    <div class="logo">Jasi's</div>
+    <div class="sublogo">SUBLIMACIÓN Y PAPELERÍA</div>
 
-<div class="header-inner">
-
-<img
-class="header-logo"
-src="IMG-20260817-WA0089.jpg"
-alt="Jasi's Sublimación y Papelería"
->
-
-<div class="header-actions">
-
-<a href="tel:+34641498002">
-📱 Llamar
-</a>
-
-<button
-class="cart-button"
-onclick="openCart()"
->
-🛒 Pedido <span id="cartCount">0</span>
-</button>
-
-</div>
-
-</div>
-
+    <div class="contacto">
+        📱 <a href="tel:+34641498002">+34 641 49 80 02</a>
+        &nbsp; | &nbsp;
+        📧 <a href="mailto:jasicake48@gmail.com">jasicake48@gmail.com</a>
+    </div>
 </header>
 
-
-<!-- =========================
-     PÁGINA PRINCIPAL
-========================= -->
-
-<main id="home">
-
-<section class="hero">
-
-<div>
-
-<img
-class="hero-logo"
-src="IMG-20260817-WA0089.jpg"
-alt="Logo Jasi's"
->
-
-<h1>Jasi's</h1>
-
-<h2>Sublimación y Papelería</h2>
-
-<p class="hero-description">
-Creamos piñatas, tartas, tazas sublimadas y papelería personalizada
-para hacer tus momentos todavía más especiales.
-</p>
-
-
-<div class="contact-main">
-
-<a href="tel:+34641498002">
-📱 +34 641 49 80 02
-</a>
-
-<a href="mailto:jasicake48@gmail.com">
-✉️ jasicake48@gmail.com
-</a>
-
-</div>
-
-
-<h3 class="catalog-title">
-✨ ¿Qué estás buscando?
-</h3>
-
-
-<div class="category-menu">
-
-
-<button
-class="category-button"
-onclick="showCatalog('pinatas')"
->
-
-<span class="category-icon">
-🪅
-</span>
-
-<h3>
-Piñatas
-</h3>
-
-<span>
-Ver catálogo →
-</span>
-
-</button>
-
-
-<button
-class="category-button"
-onclick="showCatalog('tartas')"
->
-
-<span class="category-icon">
-🎂
-</span>
-
-<h3>
-Tartas
-</h3>
-
-<span>
-Ver catálogo →
-</span>
-
-</button>
-
-
-<button
-class="category-button"
-onclick="showCatalog('tazas')"
->
-
-<span class="category-icon">
-☕
-</span>
-
-<h3>
-Tazas sublimadas
-</h3>
-
-<span>
-Ver catálogo →
-</span>
-
-</button>
-
-
-<button
-class="category-button"
-onclick="showCatalog('papeleria')"
->
-
-<span class="category-icon">
-📚
-</span>
-
-<h3>
-Papelería
-</h3>
-
-<span>
-Ver catálogo →
-</span>
-
-</button>
-
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-
-<!-- =========================
-     CATÁLOGO PIÑATAS
-========================= -->
-
-<section
-id="catalog-pinatas"
-class="catalog-page"
->
-
-<div class="catalog-inner">
-
-<button
-class="back-button"
-onclick="goHome()"
->
-← Volver al catálogo
-</button>
-
-
-<div class="catalog-heading">
-
-<h2>🪅 Piñatas personalizadas</h2>
-
-<p>
-Diseñamos tu piñata según la temática, colores y detalles
-que quieras para tu celebración.
-</p>
-
-</div>
-
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG_20260817_130757.jpg"
-alt="Piñata personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Piñata personalizada</h3>
-
-<p>
-Piñata hecha especialmente para tu celebración.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Piñata personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0063.jpg"
-alt="Piñata personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Piñata personalizada</h3>
-
-<p>
-Elige la temática y los detalles que quieras.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Piñata personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0087.jpg"
-alt="Piñata personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Piñata personalizada</h3>
-
-<p>
-Un diseño único para cada cumpleaños.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Piñata personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0086.jpg"
-alt="Piñata personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Piñata personalizada</h3>
-
-<p>
-Creamos el diseño según tu idea.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Piñata personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
+<nav>
+    <button onclick="mostrar('inicio')">🏠 Inicio</button>
+    <button onclick="mostrar('pinatas')">🪅 Piñatas</button>
+    <button onclick="mostrar('tazas')">☕ Tazas</button>
+    <button onclick="mostrar('tartas')">🎂 Tartas</button>
+</nav>
+
+<div class="contenedor">
+
+<!-- INICIO -->
+<section id="inicio" class="catalogo activo">
+    <div class="titulo">
+        <h1>Bienvenidos a Jasi's 💕</h1>
+        <p>Personalizados hechos con amor para cada ocasión.</p>
+        <p>Elige una de nuestras categorías para ver nuestros trabajos.</p>
+    </div>
 </section>
 
 
-<!-- =========================
-     CATÁLOGO TARTAS
-========================= -->
+<!-- PIÑATAS -->
+<section id="pinatas" class="catalogo">
 
-<section
-id="catalog-tartas"
-class="catalog-page"
->
+    <div class="titulo">
+        <h1>🪅 Piñatas</h1>
+        <p>Piñatas personalizadas para hacer de tu celebración un momento inolvidable.</p>
+    </div>
 
-<div class="catalog-inner">
+    <div class="productos">
 
-<button
-class="back-button"
-onclick="goHome()"
->
-← Volver al catálogo
-</button>
+        <div class="producto">
+            <img src="IMG-20260817-WA0063.jpg" alt="Piñata personalizada">
+            <h3>Piñata personalizada</h3>
+            <button onclick="pedir('Piñata personalizada - modelo 1')">
+                Pedir
+            </button>
+        </div>
 
+        <div class="producto">
+            <img src="IMG-20260817-WA0065.jpg" alt="Piñata personalizada">
+            <h3>Piñata personalizada</h3>
+            <button onclick="pedir('Piñata personalizada - modelo 2')">
+                Pedir
+            </button>
+        </div>
 
-<div class="catalog-heading">
+        <div class="producto">
+            <img src="IMG-20260817-WA0067.jpg" alt="Piñata personalizada">
+            <h3>Piñata personalizada</h3>
+            <button onclick="pedir('Piñata personalizada - modelo 3')">
+                Pedir
+            </button>
+        </div>
 
-<h2>🎂 Tartas personalizadas</h2>
-
-<p>
-Tartas hechas y decoradas para tu celebración.
-El precio base parte de 45 € y puede variar según el diseño.
-</p>
-
-</div>
-
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0074.jpg"
-alt="Tarta personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Tarta personalizada</h3>
-
-<p>
-Diseñada según la temática de tu celebración.
-</p>
-
-<div class="price">
-Desde 45 €
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, decoración y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Tarta personalizada','Desde 45 €')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0080.jpg"
-alt="Tarta personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Tarta personalizada</h3>
-
-<p>
-Una tarta especial para un momento especial.
-</p>
-
-<div class="price">
-Desde 45 €
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, decoración y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Tarta personalizada','Desde 45 €')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0088.jpg"
-alt="Tarta personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Tarta personalizada</h3>
-
-<p>
-Consulta tu diseño y te damos el precio final.
-</p>
-
-<div class="price">
-Desde 45 €
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-diseño, decoración y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Tarta personalizada','Desde 45 €')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 
-<!-- =========================
-     CATÁLOGO TAZAS
-========================= -->
+<!-- TAZAS -->
+<section id="tazas" class="catalogo">
 
-<section
-id="catalog-tazas"
-class="catalog-page"
->
+    <div class="titulo">
+        <h1>☕ Tazas personalizadas</h1>
+        <p>Tazas personalizadas para regalos, profesores, familias y ocasiones especiales.</p>
+    </div>
 
-<div class="catalog-inner">
+    <div class="productos">
 
-<button
-class="back-button"
-onclick="goHome()"
->
-← Volver al catálogo
-</button>
+        <div class="producto">
+            <img src="IMG-20260817-WA0068.jpg" alt="Taza personalizada">
+            <h3>Taza personalizada</h3>
+            <button onclick="pedir('Taza personalizada - modelo 1')">
+                Pedir
+            </button>
+        </div>
 
+        <div class="producto">
+            <img src="IMG-20260817-WA0071.jpg" alt="Taza personalizada">
+            <h3>Taza personalizada</h3>
+            <button onclick="pedir('Taza personalizada - modelo 2')">
+                Pedir
+            </button>
+        </div>
 
-<div class="catalog-heading">
+        <div class="producto">
+            <img src="IMG-20260817-WA0075.jpg" alt="Taza personalizada">
+            <h3>Taza personalizada</h3>
+            <button onclick="pedir('Taza personalizada - modelo 3')">
+                Pedir
+            </button>
+        </div>
 
-<h2>☕ Tazas sublimadas</h2>
-
-<p>
-Tazas personalizadas con nombres, fotos, frases,
-temáticas o diseños especiales.
-</p>
-
-</div>
-
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0068.jpg"
-alt="Taza sublimada personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Taza personalizada</h3>
-
-<p>
-Personalízala con el diseño que quieras.
-</p>
-
-<div class="price">
-15–20 €
-</div>
-
-<span class="price-note">
-El precio puede variar según diseño,
-personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Taza personalizada','15–20 €')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0075.jpg"
-alt="Taza sublimada personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Taza personalizada</h3>
-
-<p>
-Un detalle personalizado para regalar.
-</p>
-
-<div class="price">
-15–20 €
-</div>
-
-<span class="price-note">
-El precio puede variar según diseño,
-personalización y adicionales.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Taza personalizada','15–20 €')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 
-<!-- =========================
-     CATÁLOGO PAPELERÍA
-========================= -->
+<!-- TARTAS -->
+<section id="tartas" class="catalogo">
 
-<section
-id="catalog-papeleria"
-class="catalog-page"
->
+    <div class="titulo">
+        <h1>🎂 Tartas</h1>
+        <p>Tartas hechas artesanalmente y personalizadas para tu celebración.</p>
+    </div>
 
-<div class="catalog-inner">
+    <div class="productos">
 
-<button
-class="back-button"
-onclick="goHome()"
->
-← Volver al catálogo
-</button>
+        <div class="producto">
+            <img src="IMG-20260817-WA0070.jpg" alt="Tarta personalizada">
+            <h3>Tarta personalizada</h3>
+            <button onclick="pedir('Tarta personalizada - modelo 1')">
+                Pedir
+            </button>
+        </div>
 
+        <div class="producto">
+            <img src="IMG-20260817-WA0074.jpg" alt="Tarta personalizada">
+            <h3>Tarta personalizada</h3>
+            <button onclick="pedir('Tarta personalizada - modelo 2')">
+                Pedir
+            </button>
+        </div>
 
-<div class="catalog-heading">
+        <div class="producto">
+            <img src="IMG-20260817-WA0078.jpg" alt="Tarta personalizada">
+            <h3>Tarta personalizada</h3>
+            <button onclick="pedir('Tarta personalizada - modelo 3')">
+                Pedir
+            </button>
+        </div>
 
-<h2>📚 Papelería personalizada</h2>
-
-<p>
-Etiquetas, detalles y papelería personalizada
-para colegios, celebraciones y ocasiones especiales.
-</p>
-
-</div>
-
-
-<div class="products">
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0069.jpg"
-alt="Papelería personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Papelería personalizada</h3>
-
-<p>
-Diseñamos tus detalles según lo que necesites.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-cantidad, diseño y personalización.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Papelería personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-photo">
-<img
-src="IMG-20260817-WA0076.jpg"
-alt="Papelería personalizada"
->
-</div>
-
-<div class="card-content">
-
-<h3>Papelería personalizada</h3>
-
-<p>
-Detalles hechos especialmente para ti.
-</p>
-
-<div class="price">
-Consultar
-</div>
-
-<span class="price-note">
-El precio puede variar según tamaño,
-cantidad, diseño y personalización.
-</span>
-
-<button
-class="add-button"
-onclick="addToCart('Papelería personalizada','Consultar')"
->
-🛒 Añadir al pedido
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
-
-<!-- =========================
-     CONTACTO
-========================= -->
-
-<section class="contact-section">
-
-<h2>💕 ¿Hacemos algo bonito para ti?</h2>
-
-<p>
-Cuéntame qué tienes en mente y preparamos tu pedido personalizado.
-</p>
-
-<div class="contact-links">
-
-<a href="tel:+34641498002">
-📱 +34 641 49 80 02
-</a>
-
-<a href="mailto:jasicake48@gmail.com">
-✉️ jasicake48@gmail.com
-</a>
-
-<a
-href="https://wa.me/34641498002"
-target="_blank"
->
-💬 WhatsApp
-</a>
-
 </div>
 
-</section>
-
-
-<!-- =========================
-     CARRITO
-========================= -->
-
-<aside
-class="cart"
-id="cart"
->
-
-<div class="cart-header">
-
-<h2>Tu pedido 🛒</h2>
-
-<button
-class="close-button"
-onclick="closeCart()"
->
-✕
-</button>
-
-</div>
-
-
-<div id="cartItems"></div>
-
-
-<div class="total">
-
-<span>Total</span>
-
-<span id="cartTotal">
-0,00 €
-</span>
-
-</div>
-
-
-<div class="form">
-
-<h3>Confirma tus datos</h3>
-
-<label for="customerName">
-Nombre *
-</label>
-
-<input
-id="customerName"
-type="text"
-placeholder="Tu nombre"
->
-
-
-<label for="customerPhone">
-Teléfono *
-</label>
-
-<input
-id="customerPhone"
-type="tel"
-placeholder="+34..."
->
-
-
-<label for="customerDate">
-Fecha del pedido *
-</label>
-
-<input
-id="customerDate"
-type="date"
->
-
-
-<label for="customerTime">
-Hora aproximada
-</label>
-
-<input
-id="customerTime"
-type="time"
->
-
-
-<label for="customerNotes">
-Detalles del pedido / personalización
-</label>
-
-<textarea
-id="customerNotes"
-placeholder="Temática, colores, nombre, cantidad, etc."
-></textarea>
-
-</div>
-
-
-<button
-class="whatsapp-order"
-onclick="sendOrder()"
->
-📲 Confirmar pedido por WhatsApp
-</button>
-
-</aside>
-
-
-<!-- WHATSAPP FLOTANTE -->
-
-<a
-class="whatsapp"
-href="https://wa.me/34641498002"
-target="_blank"
-aria-label="WhatsApp"
->
-💬
-</a>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
+    <strong>Jasi's</strong><br>
+    Sublimación y Papelería<br><br>
 
-<strong>Jasi's Sublimación y Papelería</strong>
-
-<br><br>
-
-📱 +34 641 49 80 02
-
-<br>
-
-✉️ jasicake48@gmail.com
-
-<br><br>
-
-© 2026 Jasi's
-
+    📱 <a href="tel:+34641498002">+34 641 49 80 02</a><br>
+    📧 <a href="mailto:jasicake48@gmail.com">jasicake48@gmail.com</a>
 </footer>
+
+
+<a class="whatsapp"
+   href="https://wa.me/34641498002"
+   target="_blank"
+   aria-label="WhatsApp">
+   ☎
+</a>
 
 
 <script>
 
-/* =========================
-   VARIABLES
-========================= */
+function mostrar(seccion) {
 
-  
+    document.querySelectorAll('.catalogo').forEach(function(elemento) {
+        elemento.classList.remove('activo');
+    });
+
+    document.getElementById(seccion).classList.add('activo');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+
+function pedir(producto) {
+
+    let nombre = prompt(
+        "Para realizar tu pedido de " + producto +
+        ", escribe tu nombre:"
+    );
+
+    if (!nombre) {
+        return;
+    }
+
+    let cantidad = prompt(
+        "¿Cuántas unidades deseas?"
+    );
+
+    if (!cantidad) {
+        return;
+    }
+
+    let mensaje =
+        "Hola Jasi's 💕%0A%0A" +
+        "Quiero realizar un pedido.%0A%0A" +
+        "Producto: " + producto + "%0A" +
+        "Nombre: " + nombre + "%0A" +
+        "Cantidad: " + cantidad + "%0A%0A" +
+        "Quiero confirmar los detalles del pedido.";
+
+    window.open(
+        "https://wa.me/34641498002?text=" + mensaje,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+  </html>
