@@ -22,6 +22,10 @@ body {
     color: #4a3038;
 }
 
+/* =========================
+   CABECERA
+========================= */
+
 header {
     background: linear-gradient(135deg, #fff0f4, #ffe0e9);
     text-align: center;
@@ -56,6 +60,10 @@ header {
     font-weight: bold;
 }
 
+/* =========================
+   MENÚ
+========================= */
+
 nav {
     display: flex;
     justify-content: center;
@@ -77,6 +85,7 @@ nav a {
     border-radius: 25px;
     font-size: 15px;
     font-weight: bold;
+    transition: .2s;
 }
 
 nav a:hover,
@@ -84,11 +93,19 @@ nav a:active {
     background: #d95b7a;
 }
 
+/* =========================
+   CONTENEDOR
+========================= */
+
 .contenedor {
     max-width: 1100px;
     margin: auto;
     padding: 25px 18px;
 }
+
+/* =========================
+   INICIO
+========================= */
 
 .inicio {
     text-align: center;
@@ -98,6 +115,7 @@ nav a:active {
 .inicio h1 {
     color: #d95b7a;
     font-size: 34px;
+    margin-bottom: 12px;
 }
 
 .inicio p {
@@ -123,10 +141,13 @@ nav a:active {
 
 .categoria-icono {
     font-size: 45px;
+    margin-bottom: 10px;
 }
 
 .categoria h2 {
     color: #633e49;
+    font-size: 21px;
+    margin: 8px 0;
 }
 
 .categoria a {
@@ -139,6 +160,10 @@ nav a:active {
     border-radius: 22px;
     font-weight: bold;
 }
+
+/* =========================
+   CATÁLOGOS
+========================= */
 
 .catalogo {
     padding: 55px 0;
@@ -153,11 +178,14 @@ nav a:active {
 .titulo h1 {
     color: #d95b7a;
     font-size: 34px;
+    margin-bottom: 10px;
 }
 
 .titulo p {
     color: #76515c;
     line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
 }
 
 .productos {
@@ -186,11 +214,19 @@ nav a:active {
 .producto h3 {
     margin: 15px 0 8px;
     color: #633e49;
+    font-size: 19px;
 }
 
 .producto p {
     color: #76515c;
     font-size: 14px;
+    line-height: 1.5;
+}
+
+.ejemplo {
+    color: #9a707d;
+    font-size: 13px;
+    font-style: italic;
 }
 
 .precio {
@@ -215,6 +251,10 @@ nav a:active {
     background: #b94362;
 }
 
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
 footer {
     margin-top: 50px;
     background: #633e49;
@@ -228,6 +268,10 @@ footer a {
     color: #ffd4df;
     text-decoration: none;
 }
+
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp {
     position: fixed;
@@ -247,7 +291,12 @@ footer a {
     z-index: 20;
 }
 
+/* =========================
+   MÓVIL
+========================= */
+
 @media (max-width: 800px) {
+
     .productos {
         grid-template-columns: 1fr 1fr;
     }
@@ -258,12 +307,18 @@ footer a {
 }
 
 @media (max-width: 550px) {
+
     .logo {
         width: 180px;
     }
 
+    .sublogo {
+        font-size: 12px;
+    }
+
     nav {
         gap: 7px;
+        padding: 12px 8px;
     }
 
     nav a {
@@ -288,6 +343,10 @@ footer a {
 
 <body>
 
+<!-- =========================
+     CABECERA
+========================= -->
+
 <header>
 
     <img
@@ -301,6 +360,7 @@ footer a {
     </div>
 
     <div class="contacto">
+
         📱
         <a href="tel:+34641498002">
             +34 641 49 80 02
@@ -312,29 +372,49 @@ footer a {
         <a href="mailto:jasicake48@gmail.com">
             jasicake48@gmail.com
         </a>
+
     </div>
 
 </header>
 
 
+<!-- =========================
+     MENÚ PRINCIPAL
+========================= -->
+
 <nav>
 
-    <a href="#inicio">🏠 Inicio</a>
+    <a href="#inicio">
+        🏠 Inicio
+    </a>
 
-    <a href="#pinatas">🪅 Piñatas</a>
+    <a href="#pinatas">
+        🪅 Piñatas
+    </a>
 
-    <a href="#tazas">☕ Tazas</a>
+    <a href="#tazas">
+        ☕ Tazas
+    </a>
 
-    <a href="#tartas">🎂 Tartas</a>
+    <a href="#tartas">
+        🎂 Tartas
+    </a>
 
 </nav>
 
 
 <div class="contenedor">
 
+
+<!-- =========================
+     INICIO
+========================= -->
+
 <section id="inicio" class="inicio">
 
-    <h1>Bienvenidos a Jasi's 💕</h1>
+    <h1>
+        Bienvenidos a Jasi's 💕
+    </h1>
 
     <p>
         Personalizados hechos con amor para cada ocasión.
@@ -344,25 +424,60 @@ footer a {
         Elige una categoría para descubrir nuestros trabajos.
     </p>
 
+
     <div class="categorias-inicio">
 
-        <div class="categoria">
-            <div class="categoria-icono">🪅</div>
-            <h2>Piñatas</h2>
-            <a href="#pinatas">Ver piñatas →</a>
-        </div>
 
         <div class="categoria">
-            <div class="categoria-icono">☕</div>
-            <h2>Tazas</h2>
-            <a href="#tazas">Ver tazas →</a>
+
+            <div class="categoria-icono">
+                🪅
+            </div>
+
+            <h2>
+                Piñatas
+            </h2>
+
+            <a href="#pinatas">
+                Ver piñatas →
+            </a>
+
         </div>
 
+
         <div class="categoria">
-            <div class="categoria-icono">🎂</div>
-            <h2>Tartas</h2>
-            <a href="#tartas">Ver tartas →</a>
+
+            <div class="categoria-icono">
+                ☕
+            </div>
+
+            <h2>
+                Tazas
+            </h2>
+
+            <a href="#tazas">
+                Ver tazas →
+            </a>
+
         </div>
+
+
+        <div class="categoria">
+
+            <div class="categoria-icono">
+                🎂
+            </div>
+
+            <h2>
+                Tartas
+            </h2>
+
+            <a href="#tartas">
+                Ver tartas →
+            </a>
+
+        </div>
+
 
     </div>
 
@@ -377,31 +492,45 @@ footer a {
 
     <div class="titulo">
 
-        <h1>🪅 Piñatas personalizadas</h1>
+        <h1>
+            🪅 Piñatas personalizadas
+        </h1>
 
         <p>
             Piñatas hechas especialmente para tu celebración.
-            Consulta tu idea y preparamos tu diseño personalizado.
+            Las imágenes son ejemplos de trabajos realizados.
+            Puedes consultarnos tu idea y preparar un diseño personalizado.
         </p>
 
     </div>
 
+
     <div class="productos">
+
 
         <div class="producto">
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0063.jpg"
-                alt="Piñata personalizada modelo 1"
+                alt="Ejemplo de piñata personalizada"
             >
 
-            <h3>Piñata personalizada</h3>
+            <h3>
+                Piñata personalizada
+            </h3>
 
-            <p>Modelo 1</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Piñata personalizada - modelo 1')">
+            <button
+                type="button"
+                onclick="pedir('Piñata personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
@@ -412,16 +541,25 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0065.jpg"
-                alt="Piñata personalizada modelo 2"
+                alt="Ejemplo de piñata personalizada"
             >
 
-            <h3>Piñata personalizada</h3>
+            <h3>
+                Piñata personalizada
+            </h3>
 
-            <p>Modelo 2</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Piñata personalizada - modelo 2')">
+            <button
+                type="button"
+                onclick="pedir('Piñata personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
@@ -432,20 +570,30 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0067.jpg"
-                alt="Piñata personalizada modelo 3"
+                alt="Ejemplo de piñata personalizada"
             >
 
-            <h3>Piñata personalizada</h3>
+            <h3>
+                Piñata personalizada
+            </h3>
 
-            <p>Modelo 3</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Piñata personalizada - modelo 3')">
+            <button
+                type="button"
+                onclick="pedir('Piñata personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
         </div>
+
 
     </div>
 
@@ -460,31 +608,45 @@ footer a {
 
     <div class="titulo">
 
-        <h1>☕ Tazas personalizadas</h1>
+        <h1>
+            ☕ Tazas personalizadas
+        </h1>
 
         <p>
             Tazas sublimadas y personalizadas para regalos,
             profesores, familias y ocasiones especiales.
+            Las imágenes son ejemplos de trabajos realizados.
         </p>
 
     </div>
 
+
     <div class="productos">
+
 
         <div class="producto">
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0068.jpg"
-                alt="Taza personalizada modelo 1"
+                alt="Ejemplo de taza personalizada"
             >
 
-            <h3>Taza personalizada</h3>
+            <h3>
+                Taza personalizada
+            </h3>
 
-            <p>Modelo 1</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Taza personalizada - modelo 1')">
+            <button
+                type="button"
+                onclick="pedir('Taza personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
@@ -495,16 +657,25 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0071.jpg"
-                alt="Taza personalizada modelo 2"
+                alt="Ejemplo de taza personalizada"
             >
 
-            <h3>Taza personalizada</h3>
+            <h3>
+                Taza personalizada
+            </h3>
 
-            <p>Modelo 2</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Taza personalizada - modelo 2')">
+            <button
+                type="button"
+                onclick="pedir('Taza personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
@@ -515,20 +686,30 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0075.jpg"
-                alt="Taza personalizada modelo 3"
+                alt="Ejemplo de taza personalizada"
             >
 
-            <h3>Taza personalizada</h3>
+            <h3>
+                Taza personalizada
+            </h3>
 
-            <p>Modelo 3</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Taza personalizada - modelo 3')">
+            <button
+                type="button"
+                onclick="pedir('Taza personalizada')"
+            >
                 Pedir por WhatsApp
             </button>
 
         </div>
+
 
     </div>
 
@@ -543,31 +724,45 @@ footer a {
 
     <div class="titulo">
 
-        <h1>🎂 Tartas personalizadas</h1>
+        <h1>
+            🎂 Tartas personalizadas
+        </h1>
 
         <p>
             Tartas artesanales personalizadas para cumpleaños
             y celebraciones.
+            Las imágenes son ejemplos de trabajos realizados.
         </p>
 
     </div>
 
+
     <div class="productos">
+
 
         <div class="producto">
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0070.jpg"
-                alt="Tarta personalizada modelo 1"
+                alt="Ejemplo de tarta personalizada"
             >
 
-            <h3>Tarta personalizada</h3>
+            <h3>
+                Tarta personalizada
+            </h3>
 
-            <p>Modelo 1</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Tarta personalizada - modelo 1')">
+            <button
+                type="button"
+                onclick="pedir('Tarta personalizada')"
+            >
                 Consultar por WhatsApp
             </button>
 
@@ -578,16 +773,25 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0074.jpg"
-                alt="Tarta personalizada modelo 2"
+                alt="Ejemplo de tarta personalizada"
             >
 
-            <h3>Tarta personalizada</h3>
+            <h3>
+                Tarta personalizada
+            </h3>
 
-            <p>Modelo 2</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Tarta personalizada - modelo 2')">
+            <button
+                type="button"
+                onclick="pedir('Tarta personalizada')"
+            >
                 Consultar por WhatsApp
             </button>
 
@@ -598,31 +802,48 @@ footer a {
 
             <img
                 src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0078.jpg"
-                alt="Tarta personalizada modelo 3"
+                alt="Ejemplo de tarta personalizada"
             >
 
-            <h3>Tarta personalizada</h3>
+            <h3>
+                Tarta personalizada
+            </h3>
 
-            <p>Modelo 3</p>
+            <p class="ejemplo">
+                Ejemplo de trabajo
+            </p>
 
-            <div class="precio">Consultar</div>
+            <div class="precio">
+                Consultar
+            </div>
 
-            <button onclick="pedir('Tarta personalizada - modelo 3')">
+            <button
+                type="button"
+                onclick="pedir('Tarta personalizada')"
+            >
                 Consultar por WhatsApp
             </button>
 
         </div>
 
+
     </div>
 
 </section>
 
+
 </div>
 
 
+<!-- =========================
+     PIE DE PÁGINA
+========================= -->
+
 <footer>
 
-    <strong>Jasi's Sublimación y Papelería</strong>
+    <strong>
+        Jasi's Sublimación y Papelería
+    </strong>
 
     <br><br>
 
@@ -645,6 +866,10 @@ footer a {
 </footer>
 
 
+<!-- =========================
+     WHATSAPP
+========================= -->
+
 <a
     class="whatsapp"
     href="https://wa.me/34641498002"
@@ -654,6 +879,10 @@ footer a {
     💬
 </a>
 
+
+<!-- =========================
+     PEDIDOS
+========================= -->
 
 <script>
 
@@ -671,6 +900,7 @@ function pedir(producto) {
         return;
     }
 
+
     const cantidad = prompt(
         "¿Cuántas unidades deseas?"
     );
@@ -679,17 +909,26 @@ function pedir(producto) {
         return;
     }
 
+
     const detalles = prompt(
         "¿Quieres añadir algún detalle?\n\n" +
-        "Por ejemplo: nombre, temática, colores, fecha, tamaño, etc."
+        "Por ejemplo: nombre, temática, colores, fecha, tamaño, sabor, etc."
     );
+
 
     let mensaje =
         "Hola Jasi's 💕\n\n" +
-        "Quiero hacer un pedido.\n\n" +
-        "🛍️ Producto: " + producto + "\n" +
-        "👤 Nombre: " + nombre.trim() + "\n" +
-        "🔢 Cantidad: " + cantidad.trim() + "\n";
+        "Quiero realizar un pedido.\n\n" +
+        "🛍️ Producto: " +
+        producto +
+        "\n" +
+        "👤 Nombre: " +
+        nombre.trim() +
+        "\n" +
+        "🔢 Cantidad: " +
+        cantidad.trim() +
+        "\n";
+
 
     if (detalles && detalles.trim() !== "") {
 
@@ -699,17 +938,21 @@ function pedir(producto) {
             "\n";
     }
 
+
     mensaje +=
         "\n¿Podéis confirmarme disponibilidad y precio final?";
+
 
     const url =
         "https://wa.me/34641498002?text=" +
         encodeURIComponent(mensaje);
 
+
     window.location.href = url;
+
 }
 
 </script>
 
 </body>
-        </html>
+</html>
