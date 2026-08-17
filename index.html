@@ -4,696 +4,1262 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JasiCake | Repostería, Piñatas y Personalizados</title>
+<title>Jasi's Sublimación y Papelería</title>
 
-<meta name="description" content="JasiCake - Repostería, piñatas y productos personalizados hechos con mucho cariño.">
+<meta name="description"
+content="Jasi's Sublimación y Papelería. Piñatas, tartas, tazas, toppers y papelería personalizada.">
 
 <style>
+:root{
+  --rosa:#d96b86;
+  --rosa-claro:#f9e4ea;
+  --rosa-suave:#fff7f9;
+  --crema:#fffaf7;
+  --texto:#493b40;
+  --gris:#75686d;
+  --blanco:#ffffff;
+  --borde:#ecdde2;
+  --verde:#25D366;
+}
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fff7fb;
-    color:#4a3040;
-    line-height:1.6;
-}
-
-img{
-    max-width:100%;
-    display:block;
+  margin:0;
+  background:var(--crema);
+  color:var(--texto);
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+  color:inherit;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-    background:linear-gradient(135deg,#f7b6d2,#fbdde9);
-    padding:22px 15px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,250,247,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--borde);
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
 .logo{
-    width:130px;
-    height:130px;
-    object-fit:contain;
-    margin:0 auto 10px;
-    border-radius:50%;
-    background:white;
-    padding:5px;
-    box-shadow:0 5px 20px rgba(100,50,80,.15);
+  font-family:Georgia,serif;
+  font-size:29px;
+  font-weight:bold;
+  color:var(--rosa);
+  text-decoration:none;
 }
-
-header h1{
-    font-size:2.2rem;
-    color:#7b3f62;
-    margin-bottom:5px;
-}
-
-header p{
-    color:#70445b;
-    font-size:1rem;
-}
-
-/* =========================
-   NAV
-========================= */
 
 nav{
-    background:#ffffff;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.nav-container{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px;
-    padding:10px;
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
 nav a{
-    padding:9px 15px;
-    border-radius:25px;
-    color:#70445b;
-    font-weight:bold;
-    font-size:.9rem;
-    transition:.25s;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
 }
 
-nav a:hover{
-    background:#f7b6d2;
-    color:white;
+.cart-button{
+  border:0;
+  background:var(--texto);
+  color:white;
+  border-radius:30px;
+  padding:10px 15px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* =========================
-   HERO
-========================= */
+/* PORTADA */
 
 .hero{
-    max-width:1100px;
-    margin:35px auto;
-    padding:50px 25px;
-    text-align:center;
-    background:linear-gradient(135deg,#fff,#ffeaf3);
-    border-radius:30px;
-    box-shadow:0 8px 30px rgba(120,60,90,.08);
+  max-width:1150px;
+  margin:auto;
+  min-height:570px;
+  padding:70px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  color:var(--rosa);
+  font-size:clamp(48px,9vw,85px);
+  margin:0;
 }
 
 .hero h2{
-    font-size:2.3rem;
-    color:#8c456d;
-    margin-bottom:15px;
+  font-family:Georgia,serif;
+  color:var(--texto);
+  font-size:clamp(20px,4vw,32px);
+  letter-spacing:2px;
+  margin:5px 0 25px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:0 auto 25px;
-    font-size:1.05rem;
+  color:var(--gris);
+  font-size:18px;
+  line-height:1.7;
+  max-width:650px;
+  margin:0 auto 25px;
 }
 
-.button{
-    display:inline-block;
-    background:#d979a7;
-    color:white;
-    padding:12px 24px;
-    border-radius:30px;
-    font-weight:bold;
-    box-shadow:0 5px 12px rgba(180,80,130,.2);
-    transition:.25s;
+.contact-main{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px auto;
 }
 
-.button:hover{
-    transform:translateY(-2px);
-    background:#c96394;
+.contact-main a{
+  background:white;
+  border:1px solid var(--borde);
+  padding:12px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
-/* =========================
-   SECTIONS
-========================= */
+.hero-button{
+  display:inline-block;
+  background:var(--rosa);
+  color:white;
+  text-decoration:none;
+  padding:14px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+/* SECCIONES */
 
 section{
-    max-width:1100px;
-    margin:55px auto;
-    padding:0 18px;
+  padding:70px 20px;
+}
+
+.section{
+  max-width:1150px;
+  margin:auto;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:30px;
+  text-align:center;
+  margin-bottom:38px;
 }
 
 .section-title h2{
-    font-size:2rem;
-    color:#8c456d;
+  font-family:Georgia,serif;
+  color:var(--rosa);
+  font-size:40px;
+  margin:0 0 8px;
 }
 
 .section-title p{
-    color:#795a69;
+  color:var(--gris);
+  margin:0;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* CATEGORÍAS */
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:22px;
+.category-section{
+  background:var(--rosa-suave);
+}
+
+.category-block{
+  margin-bottom:75px;
+}
+
+.category-block:last-child{
+  margin-bottom:0;
+}
+
+.category-heading{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.category-heading h3{
+  font-family:Georgia,serif;
+  font-size:32px;
+  color:var(--texto);
+  margin:0 0 7px;
+}
+
+.category-heading p{
+  color:var(--gris);
+  max-width:700px;
+  margin:auto;
+}
+
+/* PRODUCTOS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
 .card{
-    background:white;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 7px 22px rgba(90,40,70,.10);
-    transition:.25s;
+  background:white;
+  border:1px solid var(--borde);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(60,35,45,.07);
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(90,40,70,.16);
+.photo{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+  background:#f8e9ed;
 }
 
-.card-image{
-    width:100%;
-    height:260px;
-    object-fit:cover;
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .card-content{
-    padding:18px;
+  padding:20px;
 }
 
-.card h3{
-    color:#8c456d;
-    margin-bottom:7px;
+.card h4{
+  font-family:Georgia,serif;
+  font-size:23px;
+  margin:0 0 8px;
+  color:var(--rosa);
 }
 
 .card p{
-    color:#765c68;
-    font-size:.95rem;
+  color:var(--gris);
+  line-height:1.5;
+  margin:0 0 15px;
 }
 
-/* =========================
-   GALLERY
-========================= */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+.price{
+  font-size:18px;
+  font-weight:bold;
 }
 
-.gallery-item{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 7px 22px rgba(90,40,70,.10);
+.price-note{
+  display:block;
+  color:var(--gris);
+  font-size:12px;
+  margin-top:5px;
 }
 
-.gallery-item img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    transition:.3s;
+.add{
+  margin-top:15px;
+  border:0;
+  background:var(--rosa-claro);
+  color:#9b4f66;
+  border-radius:25px;
+  padding:11px 16px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.gallery-item:hover img{
-    transform:scale(1.03);
+.add:hover{
+  background:var(--rosa);
+  color:white;
 }
 
-.gallery-caption{
-    padding:15px;
-    text-align:center;
-    font-weight:bold;
-    color:#8c456d;
-}
-
-/* =========================
-   PIÑATAS
-========================= */
-
-.pinatas{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:22px;
-}
-
-.pinata{
-    background:#fff;
-    border-radius:22px;
-    padding:10px;
-    box-shadow:0 7px 22px rgba(90,40,70,.10);
-}
-
-.pinata img{
-    width:100%;
-    height:330px;
-    object-fit:cover;
-    border-radius:16px;
-}
-
-.pinata h3{
-    text-align:center;
-    color:#8c456d;
-    padding:12px 5px 5px;
-}
-
-/* =========================
-   TAZAS
-========================= */
-
-.mugs{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.mug{
-    background:white;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 7px 22px rgba(90,40,70,.10);
-}
-
-.mug img{
-    width:100%;
-    height:330px;
-    object-fit:cover;
-}
-
-.mug-content{
-    padding:18px;
-    text-align:center;
-}
-
-.mug h3{
-    color:#8c456d;
-}
-
-/* =========================
-   CONTACTO
-========================= */
+/* CONTACTO */
 
 .contact{
-    background:linear-gradient(135deg,#fbdde9,#f7b6d2);
-    border-radius:30px;
-    padding:45px 25px;
-    text-align:center;
+  background:linear-gradient(135deg,#d96b86,#c95773);
+  color:white;
+  text-align:center;
 }
 
 .contact h2{
-    color:#7b3f62;
-    font-size:2rem;
-    margin-bottom:12px;
+  font-family:Georgia,serif;
+  font-size:40px;
+  margin:0 0 10px;
 }
 
 .contact p{
-    margin-bottom:20px;
+  margin-bottom:25px;
 }
 
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
+.contact-info{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-.contact-button{
-    background:white;
-    color:#7b3f62;
-    padding:12px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    box-shadow:0 4px 12px rgba(80,40,60,.12);
+.contact-info a{
+  background:white;
+  color:var(--texto);
+  text-decoration:none;
+  padding:13px 19px;
+  border-radius:30px;
+  font-weight:bold;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:var(--verde);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:27px;
+  z-index:1500;
+  box-shadow:0 6px 20px rgba(0,0,0,.22);
+}
+
+/* CARRITO */
+
+.cart{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(440px,100%);
+  height:100vh;
+  background:white;
+  z-index:3000;
+  padding:25px;
+  overflow-y:auto;
+  box-shadow:-15px 0 45px rgba(0,0,0,.18);
+  transform:translateX(105%);
+  transition:.3s;
+}
+
+.cart.open{
+  transform:translateX(0);
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cart-header h2{
+  font-family:Georgia,serif;
+  margin:0;
+}
+
+.close{
+  border:0;
+  background:#f4ecef;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.cart-item{
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cart-item-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.quantity button{
+  border:1px solid #ddd;
+  background:white;
+  border-radius:7px;
+  padding:3px 9px;
+  cursor:pointer;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:21px;
+  font-weight:bold;
+  margin:25px 0;
+}
+
+.form{
+  background:var(--rosa-suave);
+  border:1px solid var(--borde);
+  padding:18px;
+  border-radius:18px;
+  margin-bottom:18px;
+}
+
+.form h3{
+  margin-top:0;
+}
+
+.form label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin:12px 0 5px;
+}
+
+.form input,
+.form textarea{
+  width:100%;
+  padding:11px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font:inherit;
+}
+
+.form textarea{
+  min-height:80px;
+  resize:vertical;
+}
+
+.whatsapp-order{
+  width:100%;
+  border:0;
+  background:var(--verde);
+  color:white;
+  padding:15px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.empty{
+  color:var(--gris);
+  padding:20px 0;
+}
+
+/* FOOTER */
 
 footer{
-    margin-top:60px;
-    background:#4a3040;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
+  text-align:center;
+  padding:30px 20px;
+  background:#403236;
+  color:#f9ecef;
+  font-size:14px;
 }
 
-footer strong{
-    color:#f7b6d2;
-}
+/* MÓVIL */
 
-/* =========================
-   RESPONSIVE
-========================= */
+@media(max-width:850px){
+
+  nav a{
+    display:none;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
 
 @media(max-width:600px){
 
-    header h1{
-        font-size:1.8rem;
-    }
+  .nav{
+    justify-content:center;
+  }
 
-    .hero{
-        margin:20px 12px;
-        padding:35px 18px;
-    }
+  .hero{
+    min-height:550px;
+    padding:55px 18px;
+  }
 
-    .hero h2{
-        font-size:1.8rem;
-    }
+  section{
+    padding:55px 15px;
+  }
 
-    section{
-        margin:40px auto;
-    }
+  .products{
+    grid-template-columns:1fr;
+  }
 
-    .section-title h2{
-        font-size:1.7rem;
-    }
+  .photo{
+    height:330px;
+  }
 
-    .card-image,
-    .gallery-item img{
-        height:280px;
-    }
+  .section-title h2{
+    font-size:34px;
+  }
 
-    .pinata img,
-    .mug img{
-        height:310px;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     ENCABEZADO
-========================= -->
-
 <header>
 
-    <!-- LOGO -->
-    <img
-        class="logo"
-        src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0089.jpg"
-        alt="Logo JasiCake"
-    >
+<div class="nav">
 
-    <h1>JasiCake</h1>
+<a href="#inicio" class="logo">
+Jasi's
+</a>
 
-    <p>Repostería · Piñatas · Personalizados</p>
+<nav>
+
+<a href="#catalogo">Catálogo</a>
+
+<a href="#contacto">Contacto</a>
+
+<button class="cart-button" onclick="openCart()">
+🛒 Pedido <span id="cartCount">0</span>
+</button>
+
+</nav>
+
+</div>
 
 </header>
 
 
-<!-- =========================
-     MENÚ
-========================= -->
+<main>
 
-<nav>
-    <div class="nav-container">
-        <a href="#inicio">Inicio</a>
-        <a href="#pinatas">Piñatas</a>
-        <a href="#reposteria">Repostería</a>
-        <a href="#tazas">Tazas</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-</nav>
+<!-- PORTADA -->
 
+<section id="inicio">
 
-<!-- =========================
-     INICIO
-========================= -->
+<div class="hero">
 
-<main id="inicio">
+<div class="hero-content">
 
-<section class="hero">
+<h1>Jasi's</h1>
 
-    <h2>✨ Creamos momentos dulces ✨</h2>
+<h2>Sublimación y Papelería</h2>
 
-    <p>
-        Piñatas personalizadas, tartas deliciosas y detalles
-        hechos especialmente para ti.
-    </p>
+<p>
+Piñatas, tartas, tazas, toppers, papelería y detalles personalizados,
+creados especialmente para hacer tus celebraciones aún más bonitas.
+</p>
 
-    <a class="button" href="#contacto">
-        Haz tu pedido
-    </a>
+<div class="contact-main">
 
-</section>
+<a href="tel:+34641498002">
+📱 +34 641 49 80 02
+</a>
 
+<a href="mailto:jasicake48@gmail.com">
+✉️ jasicake48@gmail.com
+</a>
 
-<!-- =========================
-     PIÑATAS
-========================= -->
+</div>
 
-<section id="pinatas">
+<a class="hero-button" href="#catalogo">
+✨ Ver catálogo
+</a>
 
-    <div class="section-title">
-        <h2>🪅 Piñatas personalizadas</h2>
-        <p>
-            Diseños hechos a mano para cumpleaños y celebraciones especiales.
-        </p>
-    </div>
+</div>
 
-    <div class="pinatas">
-
-        <div class="pinata">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0063.jpg"
-                alt="Piñata personalizada JasiCake"
-            >
-            <h3>Piñata personalizada</h3>
-        </div>
-
-        <div class="pinata">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0065.jpg"
-                alt="Piñata personalizada JasiCake"
-            >
-            <h3>Piñata personalizada</h3>
-        </div>
-
-        <div class="pinata">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0067.jpg"
-                alt="Piñata personalizada JasiCake"
-            >
-            <h3>Piñata personalizada</h3>
-        </div>
-
-        <div class="pinata">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0068.jpg"
-                alt="Piñata personalizada JasiCake"
-            >
-            <h3>Piñata personalizada</h3>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     REPOSTERÍA
-========================= -->
+<!-- CATÁLOGO -->
 
-<section id="reposteria">
+<section id="catalogo" class="category-section">
 
-    <div class="section-title">
-        <h2>🎂 Repostería</h2>
-        <p>
-            Tartas preparadas con cariño para tus momentos especiales.
-        </p>
-    </div>
+<div class="section">
 
-    <div class="gallery">
+<div class="section-title">
 
-        <div class="gallery-item">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0071.jpg"
-                alt="Tarta JasiCake"
-            >
-            <div class="gallery-caption">
-                Tartas personalizadas
-            </div>
-        </div>
+<h2>✨ Nuestro catálogo</h2>
 
-        <div class="gallery-item">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0075.jpg"
-                alt="Tarta JasiCake"
-            >
-            <div class="gallery-caption">
-                Tartas personalizadas
-            </div>
-        </div>
+<p>
+Cada categoría tiene sus propios productos y ejemplos.
+</p>
 
-        <div class="gallery-item">
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0077.jpg"
-                alt="Tarta JasiCake"
-            >
-            <div class="gallery-caption">
-                Tartas personalizadas
-            </div>
-        </div>
+</div>
 
-    </div>
+
+<!-- PIÑATAS -->
+
+<div class="category-block">
+
+<div class="category-heading">
+
+<h3>🪅 Piñatas personalizadas</h3>
+
+<p>
+Piñatas diseñadas especialmente para cada celebración.
+</p>
+
+</div>
+
+<div class="products">
+
+<script>
+document.write(`
+${productCard(
+"IMG_20260817_130757",
+"Piñata personalizada",
+"Piñata hecha a medida para tu celebración."
+)}
+
+${productCard(
+"IMG-20260817-WA0063",
+"Piñata personalizada",
+"Puedes elegir temática, colores y detalles."
+)}
+
+${productCard(
+"IMG-20260817-WA0087",
+"Piñata personalizada",
+"Diseño personalizado para cumpleaños y celebraciones."
+)}
+
+${productCard(
+"IMG-20260817-WA0086",
+"Piñata personalizada",
+"Piñatas creadas según la idea de cada cliente."
+)}
+`)
+</script>
+
+</div>
+
+</div>
+
+
+<!-- TARTAS -->
+
+<div class="category-block">
+
+<div class="category-heading">
+
+<h3>🎂 Tartas personalizadas</h3>
+
+<p>
+Tartas decoradas y personalizadas para momentos especiales.
+</p>
+
+</div>
+
+<div class="products">
+
+<script>
+document.write(`
+${productCard(
+"IMG-20260817-WA0074",
+"Tarta personalizada",
+"Tarta decorada según tu temática y preferencias."
+)}
+
+${productCard(
+"IMG-20260817-WA0080",
+"Tarta personalizada",
+"Diseño especial para cumpleaños y celebraciones."
+)}
+
+${productCard(
+"IMG-20260817-WA0088",
+"Tarta personalizada",
+"Un diseño único para una ocasión especial."
+)}
+`)
+</script>
+
+</div>
+
+</div>
+
+
+<!-- TAZAS -->
+
+<div class="category-block">
+
+<div class="category-heading">
+
+<h3>☕ Tazas sublimadas</h3>
+
+<p>
+Tazas personalizadas con nombres, fotos, frases o diseños especiales.
+</p>
+
+</div>
+
+<div class="products">
+
+<script>
+document.write(`
+${productCard(
+"IMG-20260817-WA0068",
+"Taza personalizada",
+"Elige tu diseño, nombre, frase o temática.",
+"15–20 €"
+)}
+
+${productCard(
+"IMG-20260817-WA0075",
+"Taza personalizada",
+"Un detalle bonito y personalizado para regalar.",
+"15–20 €"
+)}
+`)
+</script>
+
+</div>
+
+</div>
+
+
+<!-- PAPELERÍA -->
+
+<div class="category-block">
+
+<div class="category-heading">
+
+<h3>📚 Papelería personalizada</h3>
+
+<p>
+Etiquetas, diseños y detalles personalizados.
+</p>
+
+</div>
+
+<div class="products">
+
+<script>
+document.write(`
+${productCard(
+"IMG-20260817-WA0069",
+"Papelería personalizada",
+"Papelería diseñada especialmente para cada ocasión."
+)}
+
+${productCard(
+"IMG-20260817-WA0076",
+"Papelería personalizada",
+"Detalles personalizados con el estilo que quieras."
+)}
+`)
+</script>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     TAZAS
-========================= -->
+<!-- CONTACTO -->
 
-<section id="tazas">
+<section id="contacto" class="contact">
 
-    <div class="section-title">
-        <h2>☕ Tazas personalizadas</h2>
-        <p>
-            Regalos únicos y personalizados para cualquier ocasión.
-        </p>
-    </div>
+<div class="section">
 
-    <div class="mugs">
+<h2>
+¿Hacemos algo bonito para ti? 💕
+</h2>
 
-        <div class="mug">
+<p>
+Cuéntame qué tienes en mente y te preparo tu pedido personalizado.
+</p>
 
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0070.jpg"
-                alt="Tazas personalizadas JasiCake"
-            >
+<div class="contact-info">
 
-            <div class="mug-content">
-                <h3>✨ Tazas personalizadas</h3>
-                <p>
-                    Diseños especiales para regalar o disfrutar.
-                </p>
-            </div>
+<a href="tel:+34641498002">
+📱 +34 641 49 80 02
+</a>
 
-        </div>
+<a href="mailto:jasicake48@gmail.com">
+✉️ jasicake48@gmail.com
+</a>
 
+<a href="https://wa.me/34641498002" target="_blank">
+💬 WhatsApp
+</a>
 
-        <div class="mug">
+</div>
 
-            <img
-                src="https://raw.githubusercontent.com/jasicakeEU/Jasicake/main/IMG-20260817-WA0074.jpg"
-                alt="Taza personalizada JasiCake"
-            >
-
-            <div class="mug-content">
-                <h3>💖 Regalos personalizados</h3>
-                <p>
-                    Un detalle pensado especialmente para esa persona.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SOBRE JASICake
-========================= -->
-
-<section>
-
-    <div class="section-title">
-        <h2>💗 Hecho con cariño</h2>
-
-        <p>
-            En JasiCake cada creación se prepara cuidando los detalles,
-            desde una piñata hasta una tarta o un regalo personalizado.
-        </p>
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACTO
-========================= -->
-
-<section id="contacto">
-
-    <div class="contact">
-
-        <h2>📲 ¿Quieres hacer un pedido?</h2>
-
-        <p>
-            Escríbeme y cuéntame qué tienes en mente.
-            ¡Creamos algo bonito para ti!
-        </p>
-
-        <div class="contact-buttons">
-
-            <a
-                class="contact-button"
-                href="https://wa.me/"
-                target="_blank"
-            >
-                WhatsApp
-            </a>
-
-            <a
-                class="contact-button"
-                href="#inicio"
-            >
-                Volver arriba ↑
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 </main>
 
 
-<!-- =========================
-     PIE DE PÁGINA
-========================= -->
+<!-- CARRITO -->
+
+<aside class="cart" id="cart">
+
+<div class="cart-header">
+
+<h2>Tu pedido 🛒</h2>
+
+<button class="close" onclick="closeCart()">
+✕
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div class="total">
+
+<span>Total</span>
+
+<span id="cartTotal">
+0,00 €
+</span>
+
+</div>
+
+
+<div class="form">
+
+<h3>Confirma tus datos</h3>
+
+<label>
+Nombre *
+</label>
+
+<input
+id="customerName"
+type="text"
+placeholder="Tu nombre"
+>
+
+<label>
+Teléfono *
+</label>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="+34..."
+>
+
+<label>
+Fecha del pedido *
+</label>
+
+<input
+id="customerDate"
+type="date"
+>
+
+<label>
+Hora aproximada
+</label>
+
+<input
+id="customerTime"
+type="time"
+>
+
+<label>
+Detalles del pedido / personalización
+</label>
+
+<textarea
+id="customerNotes"
+placeholder="Temática, colores, nombre, cantidad, etc."
+></textarea>
+
+</div>
+
+
+<button
+class="whatsapp-order"
+onclick="sendOrder()"
+>
+📲 Confirmar pedido por WhatsApp
+</button>
+
+</aside>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/34641498002"
+target="_blank"
+aria-label="WhatsApp"
+>
+💬
+</a>
+
 
 <footer>
 
-    <p>
-        © 2026 <strong>JasiCake</strong>
-    </p>
+<strong>Jasi's Sublimación y Papelería</strong>
 
-    <p>
-        Repostería · Piñatas · Personalizados
-    </p>
+<br><br>
+
+📱 +34 641 49 80 02
+
+<br>
+
+✉️ jasicake48@gmail.com
+
+<br><br>
+
+© 2026 Jasi's
 
 </footer>
 
 
+<script>
+
+/* ==========================
+   CONFIGURACIÓN
+========================== */
+
+const WHATSAPP="34641498002";
+
+let cart=[];
+
+
+/* ==========================
+   CREAR PRODUCTOS
+========================== */
+
+function productCard(
+file,
+name,
+description,
+price="Consultar"
+){
+
+let clean=file.endsWith(".jpg")
+?file
+:file+".jpg";
+
+return `
+
+<article class="card">
+
+<div class="photo">
+
+<img
+src="${clean}"
+alt="${name}"
+loading="lazy"
+>
+
+</div>
+
+<div class="card-content">
+
+<h4>${name}</h4>
+
+<p>${description}</p>
+
+<div class="price">
+${price}
+</div>
+
+<span class="price-note">
+El precio puede variar según tamaño,
+diseño, personalización y adicionales.
+</span>
+
+<button
+class="add"
+onclick='addToCart(${JSON.stringify({
+name:name,
+price:price
+})})'
+>
+🛒 Añadir al pedido
+</button>
+
+</div>
+
+</article>
+
+`;
+
+}
+
+
+/* ==========================
+   CARRITO
+========================== */
+
+function addToCart(product){
+
+cart.push(product);
+
+renderCart();
+
+openCart();
+
+}
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+renderCart();
+
+}
+
+
+function renderCart(){
+
+const box=
+document.getElementById("cartItems");
+
+document.getElementById("cartCount")
+.textContent=cart.length;
+
+
+if(cart.length===0){
+
+box.innerHTML=
+'<p class="empty">Todavía no has añadido ningún producto.</p>';
+
+document.getElementById("cartTotal")
+.textContent="0,00 €";
+
+return;
+
+}
+
+
+let total=0;
+
+box.innerHTML=
+
+cart.map((item,index)=>{
+
+let numericPrice=
+parseFloat(
+String(item.price)
+.replace(",",".")
+);
+
+if(!isNaN(numericPrice)){
+total+=numericPrice;
+}
+
+return `
+
+<div class="cart-item">
+
+<div class="cart-item-top">
+
+<div>
+
+<strong>
+${item.name}
+</strong>
+
+<br>
+
+<span>
+${item.price}
+</span>
+
+</div>
+
+<button
+class="close"
+onclick="removeItem(${index})"
+>
+✕
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+
+document.getElementById("cartTotal")
+.textContent=
+total.toLocaleString(
+"es-ES",
+{
+style:"currency",
+currency:"EUR"
+}
+);
+
+}
+
+
+function openCart(){
+
+document
+.getElementById("cart")
+.classList.add("open");
+
+}
+
+
+function closeCart(){
+
+document
+.getElementById("cart")
+.classList.remove("open");
+
+}
+
+
+/* ==========================
+   WHATSAPP
+========================== */
+
+function sendOrder(){
+
+if(cart.length===0){
+
+alert(
+"Primero añade algún producto al pedido."
+);
+
+return;
+
+}
+
+
+const name=
+document
+.getElementById("customerName")
+.value
+.trim();
+
+
+const phone=
+document
+.getElementById("customerPhone")
+.value
+.trim();
+
+
+const date=
+document
+.getElementById("customerDate")
+.value;
+
+
+const time=
+document
+.getElementById("customerTime")
+.value;
+
+
+const notes=
+document
+.getElementById("customerNotes")
+.value
+.trim();
+
+
+if(!name || !phone || !date){
+
+alert(
+"Por favor, completa nombre, teléfono y fecha del pedido."
+);
+
+return;
+
+}
+
+
+const productLines=
+cart.map(
+(item,index)=>
+`${index+1}. ${item.name} — ${item.price}`
+).join("\n");
+
+
+const formattedDate=
+new Date(
+date+"T12:00:00"
+).toLocaleDateString(
+"es-ES"
+);
+
+
+const message=
+
+`Hola Jasi's 👋
+
+Quiero realizar este pedido:
+
+${productLines}
+
+👤 Nombre: ${name}
+📱 Teléfono: ${phone}
+📅 Fecha: ${formattedDate}
+⏰ Hora aproximada: ${time || "Por confirmar"}
+
+📝 Detalles:
+${notes || "Sin detalles adicionales"}
+
+¿Podéis confirmar disponibilidad y el precio final?`;
+
+
+window.open(
+"https://wa.me/"
++
+WHATSAPP
++
+"?text="
++
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+renderCart();
+
+</script>
+
 </body>
-</html>
+    </html>
